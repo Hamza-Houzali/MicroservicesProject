@@ -18,4 +18,9 @@ public abstract class CustomerService implements CustomerRepository {
     public List<Customer> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public Customer saveAndFlush(Customer c) {
+        return repository.saveAndFlush(c);
+    }
 }

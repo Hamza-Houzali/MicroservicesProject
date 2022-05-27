@@ -15,8 +15,13 @@ public class CustomerController {
     @Autowired
     CustomerService service;
 
-    @GetMapping("")
+    @GetMapping("/")
     public List<Customer> findAll() {
         return service.findAll();
+    }
+
+    @PostMapping("/")
+    public Customer saveAndFlush(@RequestBody Customer c) {
+        return service.saveAndFlush(c);
     }
 }
